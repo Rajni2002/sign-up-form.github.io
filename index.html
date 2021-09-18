@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="head-content">
+      <h1>Learn to code by <br> watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+        but understanding how developers think is invaluable. </p>
+    </div>
+    <div class="form">
+      <div class="form-head">
+        <p>
+          <strong>Try it free 7 days</strong> then $20/mo. thereafter
+        </p>
+      </div>
+      <form action="#" name="sign-up-form">
+        <input type="text" name="fname" placeholder="First Name">
+        <img id="fname-image" src="images/icon-error.svg" alt="">
+        <p class="error-message" id="fname" style="color:red;"><i>First Name cannot be empty</i></p>
+
+        <input type="text" name="lname" placeholder="Last Name">
+        <img id="lname-image" src="images/icon-error.svg" alt="">
+        <p class="error-message" id="lname" style="color:red;"><i>Last Name cannot be empty</i></p>
+
+        <input type="email" name="Email" placeholder="Email Address">
+        <img id="email-image" src="images/icon-error.svg" alt="">
+        <p class="error-message" id="email" style="color:red;"><i>Looks like this is not an email</i></p>
+
+        <input type="password" name="password" placeholder="Password">
+        <img id="pswd-image" src="images/icon-error.svg" alt="">
+        <p class="error-message" id="pswd" style="color:red;"><i>Password cannot be empty</i></p>
+
+        <input id="submit" type="button" value="Claim your free trial" onclick="validateform()">
+        <p>By clicking the button, you are agreeing to our <strong>Terms and Services</strong></p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    function validateform() {
+      let fname = document.forms["sign-up-form"]["fname"];
+      let fname_image = document.getElementById('fname-image');
+      let fname_error = document.getElementById('fname');
+
+      let lname = document.forms["sign-up-form"]["lname"];
+      let lname_image = document.getElementById('lname-image');
+      let lname_error = document.getElementById('lname');
+
+      let Email = document.forms["sign-up-form"]["Email"];
+      let Email_image = document.getElementById('email-image');
+      let Email_error = document.getElementById('email');
+
+      let password = document.forms["sign-up-form"]["password"];
+      let pswd_image = document.getElementById('pswd-image');
+      let pswd_error = document.getElementById('pswd');
+
+
+      if (fname.value == "") {
+        fname_image.style.visibility = 'visible';
+        fname_error.style.visibility = 'visible';
+        fname.style.borderColor = 'red';
+      }
+      if (lname.value == "") {
+        lname_image.style.visibility = 'visible';
+        lname_error.style.visibility = 'visible';
+        lname.style.borderColor = 'red';
+      }
+      if (Email.value == "") {
+        Email.style.color = 'red';
+        Email.value = "email@example.com"
+        Email_image.style.visibility = 'visible';
+        Email_error.style.visibility = 'visible';
+        Email.style.borderColor = 'red';
+      }
+      if (password.value == "") {
+        pswd_image.style.visibility = 'visible';
+        pswd_error.style.visibility = 'visible';
+        password.style.borderColor = 'red';
+      }
+
+    }
+  </script>
+</body>
+
+</html>
