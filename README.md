@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://github.com/Rajni2002/sign-up-form.github.io/blob/main/Screenshot%202021-09-19%20at%2012.48.42%20AM.png)
 
 ### Links
 
